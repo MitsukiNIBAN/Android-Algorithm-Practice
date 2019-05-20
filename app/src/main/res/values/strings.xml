@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Algorithm</string>
+    <string name="title_activity_hanoi">HanoiActivity</string>
+</resources>
