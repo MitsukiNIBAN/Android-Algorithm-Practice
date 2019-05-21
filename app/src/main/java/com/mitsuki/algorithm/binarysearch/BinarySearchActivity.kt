@@ -8,6 +8,7 @@ import android.os.HandlerThread
 import android.text.TextUtils
 import android.util.Log
 import android.view.Gravity
+import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
@@ -35,13 +36,13 @@ class BinarySearchActivity : AppCompatActivity() {
             if (!TextUtils.isEmpty(count.text)) {
                 orderedList.clear()
                 list.removeAllViews()
-                var params = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1.0f)
+                var params = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 0, 1.0f)
+                params.setMargins(0, 1, 0, 0)
                 for (i in 1..Integer.parseInt(count.text.toString())) {
                     orderedList.add(i)
-                    var temp = TextView(this)
-                    temp.text = i.toString()
+                    var temp = View(this)
                     temp.layoutParams = params
-                    temp.gravity = Gravity.CENTER
+                    temp.setBackgroundColor(Color.rgb(255, 255, 255))
                     list.addView(temp)
                 }
 
