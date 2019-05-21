@@ -3,33 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".binarysearch.BinarySearchActivity">
-
-    <LinearLayout
-        android:id="@+id/list"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:layout_weight="1"
-        android:background="#000"
-        android:orientation="vertical" />
+    android:layout_height="match_parent"
+    tools:context=".chessboard.ChessboardActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="4dp"
-        android:gravity="center_vertical">
+        android:padding="4dp">
 
         <EditText
-            android:id="@+id/count"
+            android:id="@+id/kValue"
             style="@style/input"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="list" />
+            android:hint="k" />
 
         <Button
             android:id="@+id/initBtn"
@@ -40,20 +31,34 @@
             android:text="init" />
 
         <EditText
-            android:id="@+id/target"
+            android:id="@+id/spXValue"
             style="@style/input"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="target" />
+            android:hint="spX" />
+
+        <EditText
+            android:id="@+id/spYValue"
+            style="@style/input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="spY" />
 
         <Button
-            android:id="@+id/findBtn"
+            android:id="@+id/coverBtn"
             style="@style/button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="find" />
+            android:text="cover" />
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/chessboard"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

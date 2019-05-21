@@ -14,6 +14,7 @@
 
         <Button
             android:id="@+id/hanoi"
+            style="@style/button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -21,6 +22,7 @@
 
         <Button
             android:id="@+id/chineseRing"
+            style="@style/button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -28,10 +30,19 @@
 
         <Button
             android:id="@+id/binarySearch"
+            style="@style/button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="二分查找" />
+
+        <Button
+            android:id="@+id/chessboard"
+            style="@style/button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="棋盘覆盖" />
 
 
     </LinearLayout>

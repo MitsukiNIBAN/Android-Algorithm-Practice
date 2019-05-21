@@ -21,7 +21,7 @@ class BinarySearchActivity : AppCompatActivity() {
     private var orderedList: MutableList<Int> = ArrayList()
     private var thread: HandlerThread = HandlerThread("BinarySearch")
     private lateinit var handler: Handler
-    lateinit var mainHandler: Handler
+    private lateinit var mainHandler: Handler
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

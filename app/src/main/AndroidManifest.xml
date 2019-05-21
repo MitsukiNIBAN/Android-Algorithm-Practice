@@ -21,6 +21,8 @@
         <activity android:name=".chinesering.ChineseRingActivity" />
         <activity android:name=".hanoi.HanoiActivity" />
         <activity android:name=".binarysearch.BinarySearchActivity" />
+        <activity android:name=".chessboard.ChessboardActivity" />
+
     </application>
 
 </manifest>

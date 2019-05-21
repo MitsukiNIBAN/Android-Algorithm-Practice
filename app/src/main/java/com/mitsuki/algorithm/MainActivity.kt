@@ -3,7 +3,9 @@ package com.mitsuki.algorithm
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.mitsuki.algorithm.binarysearch.BinarySearchActivity
+import com.mitsuki.algorithm.chessboard.ChessboardActivity
 import com.mitsuki.algorithm.chinesering.ChineseRingActivity
 import com.mitsuki.algorithm.hanoi.HanoiActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -20,6 +22,9 @@ class MainActivity : AppCompatActivity() {
         }
         binarySearch.setOnClickListener {
             startActivity(Intent(this, BinarySearchActivity::class.java))
+        }
+        chessboard.setOnClickListener {
+            startActivity(Intent(this, ChessboardActivity::class.java))
         }
     }
 }
