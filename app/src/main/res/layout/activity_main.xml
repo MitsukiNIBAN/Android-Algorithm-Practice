@@ -44,6 +44,14 @@
             android:layout_weight="1"
             android:text="棋盘覆盖" />
 
+        <Button
+            android:id="@+id/mergeSort"
+            style="@style/button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="归并排序" />
+
 
     </LinearLayout>
 

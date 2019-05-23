@@ -18,7 +18,7 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <com.mitsuki.algorithm.hanoi.PileView
+            <com.mitsuki.algorithm.widget.PileView
                 android:id="@+id/pileA"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -47,7 +47,7 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <com.mitsuki.algorithm.hanoi.PileView
+            <com.mitsuki.algorithm.widget.PileView
                 android:id="@+id/pileB"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -76,7 +76,7 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <com.mitsuki.algorithm.hanoi.PileView
+            <com.mitsuki.algorithm.widget.PileView
                 android:id="@+id/pileC"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"

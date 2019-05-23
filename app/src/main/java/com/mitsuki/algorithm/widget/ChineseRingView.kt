@@ -1,4 +1,4 @@
-package com.mitsuki.algorithm.chinesering
+package com.mitsuki.algorithm.widget
 
 import android.content.Context
 import android.graphics.Canvas

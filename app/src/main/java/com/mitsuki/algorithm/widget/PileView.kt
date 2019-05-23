@@ -1,14 +1,12 @@
-package com.mitsuki.algorithm.hanoi
+package com.mitsuki.algorithm.widget
 
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
-import android.os.Parcel
-import android.os.Parcelable
 import android.util.AttributeSet
-import android.util.Log
 import android.view.View
+import com.mitsuki.algorithm.hanoi.Dish
 
 class PileView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
 
@@ -35,7 +33,7 @@ class PileView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
                 (width / 2).toFloat(), height.toFloat(), paint
         )
 
-        var gap: Int = if ((width - miniDishW) / 2 - maxGap * (hanoiList?.size ?: return) > 0)
+        var gap: Int = if ((width - miniDishW) / 2 - maxGap * (hanoiList ?: return).size > 0)
             maxGap else 2
 
         paint.strokeWidth = dishH
