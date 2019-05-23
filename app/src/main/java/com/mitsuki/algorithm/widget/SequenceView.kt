@@ -14,7 +14,10 @@ class SequenceView(context: Context?, attrs: AttributeSet?) : View(context, attr
     var minWidth = 20F
 
     var s = 0
-    var e = 0
+    var e = -1
+
+    var n = -1
+    var t = -1
 
     init {
         paint.style = Paint.Style.FILL
@@ -25,10 +28,12 @@ class SequenceView(context: Context?, attrs: AttributeSet?) : View(context, attr
         horizontalGap = (width.toFloat() - minWidth) / (sequence ?: return).size
         var blockHeight = height.toFloat() / (sequence ?: return).size
 
-        paint.color = Color.rgb(252, 249, 135)
-        canvas?.drawRect(0F, s * blockHeight,
-                width.toFloat(), blockHeight * (e + 1),
-                paint)
+        if (e >= 0) {
+            paint.color = Color.rgb(252, 249, 135)
+            canvas?.drawRect(0F, s * blockHeight,
+                    width.toFloat(), blockHeight * (e + 1),
+                    paint)
+        }
 
         paint.color = Color.rgb(183, 232, 232)
         for (i in 0 until (sequence ?: return).size) {
@@ -36,6 +41,19 @@ class SequenceView(context: Context?, attrs: AttributeSet?) : View(context, attr
                     i * blockHeight,
                     minWidth + horizontalGap * ((sequence ?: return)[i] - 1),
                     blockHeight * (i + 1),
+                    paint)
+        }
+
+        if (n >= 0) {
+            paint.color = Color.rgb(252, 249, 135)
+            canvas?.drawRect(0F, n * blockHeight,
+                    width.toFloat(), blockHeight * (n + 1),
+                    paint)
+        }
+        if (t >= 0) {
+            paint.color = Color.rgb(255, 140, 140)
+            canvas?.drawRect(0F, t * blockHeight,
+                    width.toFloat(), blockHeight * (t + 1),
                     paint)
         }
     }

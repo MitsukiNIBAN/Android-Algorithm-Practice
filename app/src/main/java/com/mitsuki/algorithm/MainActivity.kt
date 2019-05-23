@@ -11,6 +11,7 @@ import com.mitsuki.algorithm.chessboard.ChessboardActivity
 import com.mitsuki.algorithm.chinesering.ChineseRingActivity
 import com.mitsuki.algorithm.hanoi.HanoiActivity
 import com.mitsuki.algorithm.mergesort.MergeSortActivity
+import com.mitsuki.algorithm.quicksort.QuickSortActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -32,6 +33,9 @@ class MainActivity : AppCompatActivity() {
         }
         mergeSort.setOnClickListener {
             startActivity(Intent(this, MergeSortActivity::class.java))
+        }
+        quickSort.setOnClickListener {
+            startActivity(Intent(this, QuickSortActivity::class.java))
         }
     }
 

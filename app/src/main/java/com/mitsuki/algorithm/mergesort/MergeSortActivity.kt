@@ -4,12 +4,11 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
-import android.util.Log
 import com.mitsuki.algorithm.R
-import kotlinx.android.synthetic.main.activity_binary_search.*
+import com.mitsuki.algorithm.helper.OutOfOrderUtils
+import com.mitsuki.algorithm.helper.OutOfOrderUtils.upset
 import kotlinx.android.synthetic.main.activity_binary_search.initBtn
-import kotlinx.android.synthetic.main.activity_merge_sort.*
-import kotlinx.android.synthetic.main.activity_merge_sort.view.*
+import kotlinx.android.synthetic.main.activity_sort.*
 import java.util.*
 
 class MergeSortActivity : AppCompatActivity() {
@@ -24,7 +23,7 @@ class MergeSortActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_merge_sort)
+        setContentView(R.layout.activity_sort)
 
         thread.start()
         handler = Handler(thread.looper)
@@ -35,7 +34,7 @@ class MergeSortActivity : AppCompatActivity() {
                 for (i in 1..COUNT) {
                     sequence[i - 1] = i
                 }
-                upset(sequence, 0, COUNT - 1)
+                upset(sequence, 0, COUNT - 1, random)
                 sequenceView.sequence = sequence
                 sequenceView.s = 0
                 sequenceView.e = -1
@@ -51,27 +50,6 @@ class MergeSortActivity : AppCompatActivity() {
             }
         }
 
-    }
-
-    //打乱方法1
-    private fun randomSwap(array: IntArray) {
-        for (i in 0 until array.size) {
-            var sp = random.nextInt(array.size - i)
-            if (sp != array.size - 1) {
-                var temp = array[array.size - 1]
-                array[array.size - 1] = array[sp]
-                array[sp] = temp
-            }
-        }
-
-        for (i in 0 until array.size) {
-            var sp = (array.size - 1) - random.nextInt(array.size - i)
-            if (sp != 0) {
-                var temp = array[0]
-                array[0] = array[sp]
-                array[sp] = temp
-            }
-        }
     }
 
     //归并排序
@@ -164,54 +142,6 @@ class MergeSortActivity : AppCompatActivity() {
                 }
                 reload()
             }
-        }
-    }
-
-    //打乱方法2,从归并改过来的,效果比方法1好
-    private fun upset(array: IntArray, start: Int, end: Int) {
-        if (end < start) return
-
-        var count = end - start + 1
-
-        if (count < 3) {
-            //治
-            if (random.nextInt(2) == 0) {
-                if (array[start] > array[end]) {
-                    var temp = array[end]
-                    array[end] = array[start]
-                    array[start] = temp
-                }
-            }
-        } else {
-            //分
-            upset(array, start, start + count / 2 - 1)
-            upset(array, start + count / 2, end)
-            //合
-            var temp = IntArray(count)
-            var s1 = start
-            var s2 = start + count / 2
-            for (i in 0 until count) {
-                if (s1 > start + count / 2 - 1) {
-                    temp[i] = array[s2]
-                    s2++
-                    continue
-                }
-
-                if (s2 > end) {
-                    temp[i] = array[s1]
-                    s1++
-                    continue
-                }
-
-                if (random.nextInt(2) == 0) {
-                    temp[i] = array[s2]
-                    s2++
-                } else {
-                    temp[i] = array[s1]
-                    s1++
-                }
-            }
-            temp.copyInto(array, start)
         }
     }
 

@@ -11,6 +11,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".quicksort.QuickSortActivity">
+        </activity>
         <activity android:name=".mergesort.MergeSortActivity">
         </activity>
         <activity android:name=".MainActivity">
