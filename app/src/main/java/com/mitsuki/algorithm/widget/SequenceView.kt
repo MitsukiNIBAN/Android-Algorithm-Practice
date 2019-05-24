@@ -47,16 +47,14 @@ class SequenceView(context: Context?, attrs: AttributeSet?) : View(context, attr
         if (n >= 0) {
             paint.color = Color.rgb(252, 249, 135)
             canvas?.drawRect(0F, n * blockHeight,
-                    width.toFloat(), blockHeight * (n + 1),
+                minWidth + horizontalGap * ((sequence ?: return)[n] - 1), blockHeight * (n + 1),
                     paint)
         }
         if (t >= 0) {
             paint.color = Color.rgb(255, 140, 140)
             canvas?.drawRect(0F, t * blockHeight,
-                    width.toFloat(), blockHeight * (t + 1),
+                minWidth + horizontalGap * ((sequence ?: return)[t] - 1), blockHeight * (t + 1),
                     paint)
         }
     }
-
-
 }
