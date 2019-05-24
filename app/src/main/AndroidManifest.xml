@@ -11,9 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".closestpair.ClosestPairActivity"></activity>
-        <activity android:name=".quicksort.QuickSortActivity"></activity>
-        <activity android:name=".mergesort.MergeSortActivity"></activity>
+        <activity android:name=".fractal.FractalActivity"></activity>
+        <activity android:name=".closestpair.ClosestPairActivity" />
+        <activity android:name=".quicksort.QuickSortActivity" />
+        <activity android:name=".mergesort.MergeSortActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

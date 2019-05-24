@@ -1,15 +1,13 @@
 package com.mitsuki.algorithm
 
 import android.content.Intent
-import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.annotation.RequiresApi
-import android.util.Log
 import com.mitsuki.algorithm.binarysearch.BinarySearchActivity
 import com.mitsuki.algorithm.chessboard.ChessboardActivity
 import com.mitsuki.algorithm.chinesering.ChineseRingActivity
 import com.mitsuki.algorithm.closestpair.ClosestPairActivity
+import com.mitsuki.algorithm.fractal.FractalActivity
 import com.mitsuki.algorithm.hanoi.HanoiActivity
 import com.mitsuki.algorithm.mergesort.MergeSortActivity
 import com.mitsuki.algorithm.quicksort.QuickSortActivity
@@ -40,6 +38,9 @@ class MainActivity : AppCompatActivity() {
         }
         closestPair.setOnClickListener {
             startActivity(Intent(this, ClosestPairActivity::class.java))
+        }
+        fractal.setOnClickListener {
+            startActivity(Intent(this, FractalActivity::class.java))
         }
     }
 

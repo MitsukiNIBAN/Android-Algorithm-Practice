@@ -18,15 +18,15 @@ import java.lang.Exception
 
 class ChessboardActivity : AppCompatActivity() {
 
-    lateinit var board: Array<IntArray>
+    private lateinit var board: Array<IntArray>
     private var thread: HandlerThread = HandlerThread("BinarySearch")
     private lateinit var handler: Handler
     private lateinit var mainHandler: Handler
     private var k: Int = 0
-    var side: Int = 0
-    var mark: Int = 0
+    private var side: Int = 0
+    private var mark: Int = 0
 
-    var colorGap = 0
+    private var colorGap = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

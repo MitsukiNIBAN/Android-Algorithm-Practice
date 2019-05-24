@@ -68,12 +68,20 @@
             android:text="快速排序" />
 
         <Button
-                android:id="@+id/closestPair"
-                style="@style/button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="最近点对" />
+            android:id="@+id/closestPair"
+            style="@style/button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="最近点对" />
+
+        <Button
+            android:id="@+id/fractal"
+            style="@style/button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="分形" />
     </LinearLayout>
 
 
