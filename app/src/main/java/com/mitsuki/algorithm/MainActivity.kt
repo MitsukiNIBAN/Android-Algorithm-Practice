@@ -9,6 +9,7 @@ import android.util.Log
 import com.mitsuki.algorithm.binarysearch.BinarySearchActivity
 import com.mitsuki.algorithm.chessboard.ChessboardActivity
 import com.mitsuki.algorithm.chinesering.ChineseRingActivity
+import com.mitsuki.algorithm.closestpair.ClosestPairActivity
 import com.mitsuki.algorithm.hanoi.HanoiActivity
 import com.mitsuki.algorithm.mergesort.MergeSortActivity
 import com.mitsuki.algorithm.quicksort.QuickSortActivity
@@ -36,6 +37,9 @@ class MainActivity : AppCompatActivity() {
         }
         quickSort.setOnClickListener {
             startActivity(Intent(this, QuickSortActivity::class.java))
+        }
+        closestPair.setOnClickListener {
+            startActivity(Intent(this, ClosestPairActivity::class.java))
         }
     }
 

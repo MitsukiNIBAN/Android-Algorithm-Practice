@@ -34,7 +34,7 @@ class QuickSortActivity : AppCompatActivity() {
         initBtn.setOnClickListener {
             handler.post {
                 for (i in 1..COUNT) {
-                    sequence[i - 1] = random.nextInt(COUNT)
+                    sequence[i - 1] = random.nextInt(COUNT / 10) * 10
                 }
                 upset(sequence, 0, COUNT - 1, random)
                 sequenceView.sequence = sequence
@@ -159,7 +159,7 @@ class QuickSortActivity : AppCompatActivity() {
                     reload(sub - left, sub - 1 - i + start)
                 }
             }
-            if (i > sub + right) {
+            if (i > sub) {
                 reload(sub, i)
                 if (array[i] == array[sub]) {
                     right++

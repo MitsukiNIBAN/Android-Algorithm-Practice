@@ -13,7 +13,7 @@ import java.util.*
 
 class MergeSortActivity : AppCompatActivity() {
 
-    private val COUNT = 200
+    private val COUNT = 400
     private var thread: HandlerThread = HandlerThread("MergeSort")
     private lateinit var handler: Handler
     private lateinit var mainHandler: Handler
@@ -32,7 +32,7 @@ class MergeSortActivity : AppCompatActivity() {
         initBtn.setOnClickListener {
             handler.post {
                 for (i in 1..COUNT) {
-                    sequence[i - 1] = i
+                    sequence[i - 1] = random.nextInt(COUNT - 1)
                 }
                 upset(sequence, 0, COUNT - 1, random)
                 sequenceView.sequence = sequence
@@ -149,6 +149,6 @@ class MergeSortActivity : AppCompatActivity() {
         mainHandler.post {
             sequenceView.invalidate()
         }
-        Thread.sleep(100)
+        Thread.sleep(10)
     }
 }
