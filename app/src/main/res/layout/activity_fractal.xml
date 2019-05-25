@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".fractal.FractalActivity">
+    android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/test"
-        style="@style/button"
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="test" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".fractal.FractalActivity">
 
+        <Button
+            android:id="@+id/draw"
+            style="@style/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="draw" />
 
-</LinearLayout>
+        <com.mitsuki.algorithm.widget.FractalSketchpadView
+            android:id="@+id/sketchpad"
+            android:layout_width="match_parent"
+            android:layout_height="800dp" />
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
