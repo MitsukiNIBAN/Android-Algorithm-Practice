@@ -15,14 +15,13 @@ import java.util.*
 
 class FractalActivity : AppCompatActivity() {
 
-    private val C = Complex(-0.8, 0.156)
+    private val C = Complex(-0.70176, -0.3842)
     private val THRESHOLD = 200
 
     private var thread: HandlerThread = HandlerThread("Fractal")
     private lateinit var handler: Handler
     private lateinit var mainHandler: Handler
 
-    private var random = Random()
     private var color: MutableList<Int> = ArrayList()
     private var paint = Paint(Paint.ANTI_ALIAS_FLAG)
 
@@ -40,13 +39,16 @@ class FractalActivity : AppCompatActivity() {
         sketchpad.post {
             draw.isEnabled = true
             handler.post {
-                for (i in 0..202) {
-                    color.add(Color.rgb(random.nextInt(256), random.nextInt(256), random.nextInt(256)))
+                for (i in 0..THRESHOLD + 1) {
+                    var h = i * 360 / 100F
+                    color.add(Color.HSVToColor(floatArrayOf(h % 360, 100F, 50F)))
                 }
 
                 for (i in 0 until 16) {
-                    var b = Bitmap.createBitmap((sketchpad.width / 4F).toInt(),
-                            (sketchpad.height / 4F).toInt(), Bitmap.Config.ARGB_8888)
+                    var b = Bitmap.createBitmap(
+                        (sketchpad.width / 4F).toInt(),
+                        (sketchpad.height / 4F).toInt(), Bitmap.Config.ARGB_8888
+                    )
                     sketchpad.bitmap.add(b)
                 }
                 mainHandler.post {

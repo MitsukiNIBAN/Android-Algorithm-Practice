@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fractal.FractalActivity">
 
-    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    <Button
+        android:id="@+id/draw"
+        style="@style/button"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".fractal.FractalActivity">
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="draw" />
 
-        <Button
-            android:id="@+id/draw"
-            style="@style/button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:enabled="false"
-            android:text="draw" />
+    <com.mitsuki.algorithm.widget.FractalSketchpadView
+        android:id="@+id/sketchpad"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-        <com.mitsuki.algorithm.widget.FractalSketchpadView
-            android:id="@+id/sketchpad"
-            android:layout_width="match_parent"
-            android:layout_height="800dp" />
-
-    </LinearLayout>
-</android.support.v4.widget.NestedScrollView>
+</LinearLayout>
