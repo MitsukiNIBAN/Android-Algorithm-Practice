@@ -7,13 +7,61 @@
     android:orientation="vertical"
     tools:context=".fractal.FractalActivity">
 
-    <Button
-        android:id="@+id/draw"
-        style="@style/button"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:enabled="false"
-        android:text="draw" />
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/cReal"
+            style="@style/input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="c.r"
+            android:inputType="numberSigned|numberDecimal"
+            android:text="-0.8" />
+
+        <EditText
+            android:id="@+id/cImaginary"
+            style="@style/input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="c.i"
+            android:inputType="numberSigned|numberDecimal"
+            android:text="0.156" />
+
+        <EditText
+            android:id="@+id/colorGradient"
+            style="@style/input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="gradient"
+            android:inputType="number"
+            android:text="200" />
+
+        <Button
+            android:id="@+id/initBtn"
+            style="@style/button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:text="init" />
+
+        <Button
+            android:id="@+id/drawBtn"
+            style="@style/button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:text="draw" />
+    </LinearLayout>
+
 
     <com.mitsuki.algorithm.widget.FractalSketchpadView
         android:id="@+id/sketchpad"
