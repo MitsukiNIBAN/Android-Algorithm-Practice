@@ -122,21 +122,21 @@ object SortUtils {
         //聚集相等元素
         var left = 0
         var right = 0
-        for (i in start..end) {
-            if (i == sub) continue
-            if (i < sub) {
-                if (standard(array[sub - 1 - i + start]) == standard(array[sub])) {
-                    left++
-                    swap(array, sub - 1 - i + start, sub - left)
-                }
-            }
-            if (i > sub) {
-                if (standard(array[i]) == standard(array[sub])) {
-                    right++
-                    swap(array, i, sub + right)
-                }
-            }
-        }
+//        for (i in start..end) {
+//            if (i == sub) continue
+//            if (i < sub) {
+//                if (standard(array[sub - 1 - i + start]) == standard(array[sub])) {
+//                    left++
+//                    swap(array, sub - 1 - i + start, sub - left)
+//                }
+//            }
+//            if (i > sub) {
+//                if (standard(array[i]) == standard(array[sub])) {
+//                    right++
+//                    swap(array, i, sub + right)
+//                }
+//            }
+//        }
 
         quickSort(array, start, sub - 1 - left, standard)
         quickSort(array, sub + 1 + right, end, standard)
