@@ -10,4 +10,5 @@ class Pair(a: Point, b: Point, d: Double) {
     companion object {
         fun dist(a: Point, b: Point) = Math.sqrt(((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y)).toDouble())
     }
+
 }
