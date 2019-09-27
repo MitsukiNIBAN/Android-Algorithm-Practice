@@ -1,16 +1,20 @@
 package com.mitsuki.algorithm.hanoi
 
+import android.graphics.Bitmap
 import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.TextUtils
 import android.text.method.ScrollingMovementMethod
 import android.text.style.ForegroundColorSpan
 import android.util.Log
+import android.widget.Toast
+import com.mitsuki.implement.OnBitmapCallback
+import com.mitsuki.implement.hanoi.Hanoi
 import kotlinx.android.synthetic.main.activity_hanoi.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.view.*
@@ -31,6 +35,16 @@ class HanoiActivity : AppCompatActivity() {
         setContentView(com.mitsuki.algorithm.R.layout.activity_hanoi)
 
         title = "Hanoi"
+
+
+        val df = Hanoi.init(3)
+
+        Hanoi.move(df, object : OnBitmapCallback {
+            override fun callback(bitmap: Bitmap) {
+                Toast.makeText(this@HanoiActivity, "sasdfas", Toast.LENGTH_SHORT).show()
+            }
+        })
+
 
         thread.start()
         handler = Handler(thread.looper)
@@ -55,7 +69,16 @@ class HanoiActivity : AppCompatActivity() {
             if (!TextUtils.isEmpty(number.text.toString())) {
                 val myRandom = Random()
                 for (i in 1..Integer.parseInt(number.text.toString())) {
-                    hanoiA.add(Dish(i, Color.rgb(myRandom.nextInt(255), myRandom.nextInt(255), myRandom.nextInt(255))))
+                    hanoiA.add(
+                        Dish(
+                            i,
+                            Color.rgb(
+                                myRandom.nextInt(255),
+                                myRandom.nextInt(255),
+                                myRandom.nextInt(255)
+                            )
+                        )
+                    )
                 }
                 start.hint = number.text.toString()
                 start.isEnabled = true
@@ -84,7 +107,12 @@ class HanoiActivity : AppCompatActivity() {
     }
 
 
-    private fun hanoi(n: Int, currency: MutableList<Dish>, target: MutableList<Dish>, assist: MutableList<Dish>) {
+    private fun hanoi(
+        n: Int,
+        currency: MutableList<Dish>,
+        target: MutableList<Dish>,
+        assist: MutableList<Dish>
+    ) {
         if (n < 1)
             return
         //递归A->B(C)
@@ -95,7 +123,7 @@ class HanoiActivity : AppCompatActivity() {
         target.add(tag)
         currency.remove(tag)
         mainHandler.post {
-//            log.append(getLog(tag.color, getName(currency.hashCode()), getName(target.hashCode())))
+            //            log.append(getLog(tag.color, getName(currency.hashCode()), getName(target.hashCode())))
             pileA.invalidate()
             pileB.invalidate()
             pileC.invalidate()

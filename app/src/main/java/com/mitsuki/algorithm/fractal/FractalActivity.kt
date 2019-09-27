@@ -2,9 +2,9 @@ package com.mitsuki.algorithm.fractal
 
 import android.graphics.Color
 import android.os.Build.VERSION_CODES.BASE
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.view.MotionEventCompat
+import androidx.core.view.MotionEventCompat
 import android.util.Log
 import android.view.MotionEvent
 import com.mitsuki.algorithm.helper.TaskThreadPoolExecutor

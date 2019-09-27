@@ -3,7 +3,7 @@ package com.mitsuki.algorithm.closestpair
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Point
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.mitsuki.algorithm.R
 import com.mitsuki.algorithm.helper.SortUtils
